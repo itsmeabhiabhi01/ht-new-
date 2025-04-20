@@ -1,1 +1,449 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY TALK</title>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body class="real-mode">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <button id="home-btn"><i class="fas fa-home"></i> Home</button>
+        <button id="feed-btn"><i class="fas fa-rss"></i> Feed</button>
+        <button id="dark-mode-btn"><i class="fas fa-moon"></i> Dark</button>
+        <button id="light-mode-btn"><i class="fas fa-sun"></i> Light</button>
+        <button id="real-mode-btn"><i class="fas fa-rocket"></i> Space</button>
+        <button id="stop-animation-btn"><i class="fas fa-pause"></i> Stop Animation</button>
+        <button id="color-picker-btn"><i class="fas fa-palette"></i> Pick Color</button>
+        <button id="settings-btn"><i class="fas fa-cog"></i> Settings</button>
+        <button id="notifications-btn"><i class="fas fa-bell"></i> Notifications</button>
+        <button id="profile-btn"><i class="fas fa-user"></i> Profile</button>
+        <button id="help-btn"><i class="fas fa-question-circle"></i> Help</button>
+        <button id="privacy-btn"><i class="fas fa-shield-alt"></i> Privacy Policy</button>
+        <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        <button id="close-sidebar-btn"><i class="fas fa-times"></i> Close</button>
+    </div>
+
+    <!-- Main Content (Home Page) -->
+    <div class="main-content flex flex-col items-center w-full" id="main-content">
+        <!-- Header -->
+        <div class="header-section">
+            <div class="title-section">
+                <h1>HAPPY TALK</h1>
+                <button class="navbar-toggle" id="navbar-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+            <div class="search-section">
+                <input id="search-input" placeholder="Search rooms..." type="text"/>
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="profile-section">
+                <input type="color" id="color-picker" style="display: none;">
+                <img alt="Profile" class="w-8 h-8 rounded-full" src="https://storage.googleapis.com/a1aa/image/uL6NbO7ule3yAaG0CpQKIilAue8eTYNquHR1ozsJXRzA5fCQB.jpg"/>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons" id="nav-buttons">
+            <button id="all-button">All</button>
+            <button>TRENDING</button>
+            <button>NEWS</button>
+            <button>TECH</button>
+            <button>AI</button>
+            <button>ENGLISH</button>
+            <button>PODCAST</button>
+            <button>MOVIES</button>
+            <button class="discord" onclick="window.open('https://discord.gg/bmfp2bmN', '_blank')">Discord</button>
+            <button class="premium">Premium</button>
+            <button class="create-room-btn" id="create-room-btn">Create Room</button>
+        </div>
+
+        <!-- Category Buttons -->
+        <div class="category-buttons" id="category-buttons"></div>
+
+        <!-- Room Cards -->
+        <div class="room-grid" id="room-grid">
+            <!-- Room 1 -->
+            <div class="room-card">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold room-title">English</div>
+                    <div><i class="fas fa-microphone text-yellow-500"></i></div>
+                </div>
+                <div class="people-row mt-3" id="english-people">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="room-footer">
+                    <i class="fas fa-share-alt post-icon"></i>
+                    <button class="join-room" onclick="window.open('https://meet.jit.si/EnglishRoom', '_blank')">JOIN</button>
+                </div>
+            </div>
+            <!-- Room 2 -->
+            <div class="room-card">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold room-title">Spanish</div>
+                    <div><i class="fas fa-microphone text-yellow-500"></i></div>
+                </div>
+                <div class="people-row mt-3" id="spanish-people">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="room-footer">
+                    <i class="fas fa-share-alt post-icon"></i>
+                    <button class="join-room" onclick="window.open('https://meet.jit.si/SpanishRoom', '_blank')">JOIN</button>
+                </div>
+            </div>
+            <!-- Room 3 -->
+            <div class="room-card">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold room-title">French</div>
+                    <div><i class="fas fa-microphone text-yellow-500"></i></div>
+                </div>
+                <div class="people-row mt-3" id="french-people">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="room-footer">
+                    <i class="fas fa-share-alt post-icon"></i>
+                    <button class="join-room" onclick="window.open('https://meet.jit.si/FrenchRoom', '_blank')">JOIN</button>
+                </div>
+            </div>
+            <!-- Room 4 -->
+            <div class="room-card">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold room-title">German</div>
+                    <div><i class="fas fa-microphone text-yellow-500"></i></div>
+                </div>
+                <div class="people-row mt-3" id="german-people">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="room-footer">
+                    <i class="fas fa-share-alt post-icon"></i>
+                    <button class="join-room" onclick="window.open('https://meet.jit.si/GermanRoom', '_blank')">JOIN</button>
+                </div>
+            </div>
+            <!-- Room 5 -->
+            <div class="room-card">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold room-title">Japanese</div>
+                    <div><i class="fas fa-microphone text-yellow-500"></i></div>
+                </div>
+                <div class="people-row mt-3" id="japanese-people">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="room-footer">
+                    <i class="fas fa-share-alt post-icon"></i>
+                    <button class="join-room" onclick="window.open('https://meet.jit.si/JapaneseRoom', '_blank')">JOIN</button>
+                </div>
+            </div>
+            <!-- Room 6 -->
+            <div class="room-card">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold room-title">Korean</div>
+                    <div><i class="fas fa-microphone text-yellow-500"></i></div>
+                </div>
+                <div class="people-row mt-3" id="korean-people">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="room-footer">
+                    <i class="fas fa-share-alt post-icon"></i>
+                    <button class="join-room" onclick="window.open('https://meet.jit.si/KoreanRoom', '_blank')">JOIN</button>
+                </div>
+            </div>
+            <!-- Room 7 -->
+            <div class="room-card">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold room-title">Hindi</div>
+                    <div><i class="fas fa-microphone text-yellow-500"></i></div>
+                </div>
+                <div class="people-row mt-3" id="hindi-people">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="room-footer">
+                    <i class="fas fa-share-alt post-icon"></i>
+                    <button class="join-room" onclick="window.open('https://meet.jit.si/HindiRoom', '_blank')">JOIN</button>
+                </div>
+            </div>
+            <!-- Room 8 -->
+            <div class="room-card">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold room-title">Arabic</div>
+                    <div><i class="fas fa-microphone text-yellow-500"></i></div>
+                </div>
+                <div class="people-row mt-3" id="arabic-people">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="room-footer">
+                    <i class="fas fa-share-alt post-icon"></i>
+                    <button class="join-room" onclick="window.open('https://meet.jit.si/ArabicRoom', '_blank')">JOIN</button>
+                </div>
+            </div>
+            <!-- Room 9 -->
+            <div class="room-card">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold room-title">Portuguese</div>
+                    <div><i class="fas fa-microphone text-yellow-500"></i></div>
+                </div>
+                <div class="people-row mt-3" id="portuguese-people">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="room-footer">
+                    <i class="fas fa-share-alt post-icon"></i>
+                    <button class="join-room" onclick="window.open('https://meet.jit.si/PortugueseRoom', '_blank')">JOIN</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create Room Modal -->
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="create-room-modal" id="create-room-modal">
+            <h2 class="text-2xl font-bold mb-6">Create a Room</h2>
+            <div class="mb-6">
+                <label>Title</label>
+                <input type="text" id="room-title" placeholder="Room Name"/>
+            </div>
+            <div class="mb-6">
+                <label>Language</label>
+                <select id="room-language">
+                    <option>English</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                    <option>Korean</option>
+                    <option>Japanese</option>
+                    <option>Hindi</option>
+                    <option>Tamil</option>
+                    <option>Telugu</option>
+                    <option>Bengali</option>
+                    <option>Malayalam</option>
+                    <option>German</option>
+                    <option>Italian</option>
+                    <option>Russian</option>
+                    <option>Arabic</option>
+                    <option>Portuguese</option>
+                    <option>Chinese</option>
+                    <option>Urdu</option>
+                    <option>Punjabi</option>
+                    <option>Marathi</option>
+                    <option>Gujarati</option>
+                    <option>Kannada</option>
+                    <option>Odia</option>
+                    <option>Assamese</option>
+                    <option>Vietnamese</option>
+                    <option>Thai</option>
+                    <option>Dutch</option>
+                    <option>Swedish</option>
+                    <option>Turkish</option>
+                    <option>Polish</option>
+                    <option>Hebrew</option>
+                </select>
+            </div>
+            <div class="mb-6">
+                <label>Visibility</label>
+                <select id="room-visibility">
+                    <option>Public</option>
+                    <option>Private</option>
+                </select>
+            </div>
+            <div class="mb-6">
+                <label>Max People</label>
+                <select id="room-max-people">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>Unlimited</option>
+                    <option>Custom</option>
+                </select>
+                <input type="number" class="custom-input" id="custom-max" placeholder="Enter custom number"/>
+            </div>
+            <div class="mb-6">
+                <label class="flex items-center mb-2">
+                    <input type="checkbox" class="mr-2" id="mic-toggle"/> <i class="fas fa-microphone mr-2"></i> Mic
+                </label>
+                <label class="flex items-center mb-2">
+                    <input type="checkbox" class="mr-2" id="camera-toggle"/> <i class="fas fa-video mr-2"></i> Camera
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-2" id="chat-toggle"/> <i class="fas fa-comments mr-2"></i> Chat
+                </label>
+            </div>
+            <button id="create-button">Create Room</button>
+        </div>
+
+        <!-- Plus Button -->
+        <div class="plus-button" id="plus-button">
+            <i class="fas fa-plus text-xl"></i>
+        </div>
+    </div>
+
+    <!-- Feed Content -->
+    <div class="feed-content" id="feed-content">
+        <div class="feed-sidebar">
+            <h2 class="text-xl font-bold mb-4">Trending Topics</h2>
+            <div class="mb-2">#LanguageLovers</div>
+            <div class="mb-2">#SpaceVibes</div>
+            <div class="mb-2">#MovieNight</div>
+            <div class="mb-2">#CultureExchange</div>
+            <h2 class="text-xl font-bold mb-4 mt-6">Suggested Users</h2>
+            <div class="flex items-center mb-2">
+                <img class="profile-pic" src="https://randomuser.me/api/portraits/men/85.jpg"/>
+                <span>GalacticTalker</span>
+            </div>
+            <div class="flex items-center mb-2">
+                <img class="profile-pic" src="https://randomuser.me/api/portraits/women/45.jpg"/>
+                <span>StarSpeaker</span>
+            </div>
+        </div>
+        <div class="feed-main">
+            <div class="feed-header">
+                <h1 class="font-orbitron text-2xl text-white text-shadow-md">HAPPY TALK FEED</h1>
+                <button class="back-home-btn" id="back-home-btn">Back to Home</button>
+            </div>
+            <div class="feed-input">
+                <div class="post-avatar">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User">
+                </div>
+                <div class="post-input">
+                    <textarea placeholder="Share your thoughts..."></textarea>
+                    <div class="post-actions">
+                        <div class="post-icons">
+                            <i class="far fa-image"></i>
+                            <i class="fas fa-link"></i>
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <button class="post-button" disabled>Post</button>
+                    </div>
+                </div>
+            </div>
+            <div class="feed-posts">
+                <!-- Post 1 -->
+                <div class="feed-post">
+                    <div class="flex items-center">
+                        <div class="post-avatar">
+                            <img class="profile-pic" src="https://randomuser.me/api/portraits/women/65.jpg"/>
+                        </div>
+                        <div class="feed-username">StarGazer</div>
+                    </div>
+                    <div class="post-content">
+                        Just joined an amazing English room! Learning new phrases and making friends. #LanguageLovers #HappyTalk
+                    </div>
+                    <img class="post-image" src="https://source.unsplash.com/random/600x400?galaxy" alt="Post Image"/>
+                    <div class="post-hashtags">#SpaceVibes #Community</div>
+                    <div class="post-actions-bar">
+                        <div class="post-action">
+                            <i class="far fa-comment"></i>
+                            <span>24</span>
+                        </div>
+                        <div class="post-action">
+                            <i class="fas fa-retweet"></i>
+                            <span>56</span>
+                        </div>
+                        <div class="post-action">
+                            <i class="far fa-heart"></i>
+                            <span>189</span>
+                        </div>
+                        <div class="post-action">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post 2 -->
+                <div class="feed-post">
+                    <div class="flex items-center">
+                        <div class="post-avatar">
+                            <img class="profile-pic premium" src="https://randomuser.me/api/portraits/men/75.jpg"/>
+                        </div>
+                        <div class="feed-username">CosmoChat</div>
+                    </div>
+                    <div class="post-content">
+                        Spanish room was lit! Discussed favorite movies en español. Join us next time! #CineEnEspañol
+                    </div>
+                    <div class="post-hashtags">#MovieNight #HappyTalk</div>
+                    <div class="post-actions-bar">
+                        <div class="post-action">
+                            <i class="far fa-comment"></i>
+                            <span>42</span>
+                        </div>
+                        <div class="post-action">
+                            <i class="fas fa-retweet"></i>
+                            <span>128</span>
+                        </div>
+                        <div class="post-action">
+                            <i class="far fa-heart"></i>
+                            <span>567</span>
+                        </div>
+                        <div class="post-action">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post 3 -->
+                <div class="feed-post">
+                    <div class="flex items-center">
+                        <div class="post-avatar">
+                            <img class="profile-pic" src="https://randomuser.me/api/portraits/women/35.jpg"/>
+                        </div>
+                        <div class="feed-username">NebulaNerd</div>
+                    </div>
+                    <div class="post-content">
+                        French conversation practice was so fun! Learned about Parisian culture. #FrenchVibes
+                    </div>
+                    <img class="post-image" src="https://source.unsplash.com/random/600x400?paris" alt="Post Image"/>
+                    <div class="post-hashtags">#CultureExchange #HappyTalk</div>
+                    <div class="post-actions-bar">
+                        <div class="post-action">
+                            <i class="far fa-comment"></i>
+                            <span>18</span>
+                        </div>
+                        <div class="post-action">
+                            <i class="fas fa-retweet"></i>
+                            <span>32</span>
+                        </div>
+                        <div class="post-action">
+                            <i class="far fa-heart"></i>
+                            <span>243</span>
+                        </div>
+                        <div class="post-action">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="feed-sidebar">
+            <h2 class="text-xl font-bold mb-4">Trending Topics</h2>
+            <div class="mb-2">#LanguageLovers</div>
+            <div class="mb-2">#SpaceVibes</div>
+            <div class="mb-2">#MovieNight</div>
+            <div class="mb-2">#CultureExchange</div>
+            <h2 class="text-xl font-bold mb-4 mt-6">Suggested Users</h2>
+            <div class="flex items-center mb-2">
+                <img class="profile-pic" src="https://randomuser.me/api/portraits/men/85.jpg"/>
+                <span>GalacticTalker</span>
+            </div>
+            <div class="flex items-center mb-2">
+                <img class="profile-pic" src="https://randomuser.me/api/portraits/women/45.jpg"/>
+                <span>StarSpeaker</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
